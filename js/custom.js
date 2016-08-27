@@ -17,7 +17,7 @@ var Blank ={
 			event.preventDefault();	
 			Blank.win_wid_hit();
 			var cur = $(this).attr('href');
-			var host = window.location.hostname; //remove 4000 when live
+			var host = window.location.hostname+':4000'; //remove 4000 when live
 			var page = 'http://'+host+cur;
 			
 			if(_wl == page) {
