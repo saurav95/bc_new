@@ -1,0 +1,102 @@
+@media screen and (max-width:768px){
+/*------home page-----*/
+.page-wrapper{padding:68px 0;}
+.inset{padding:0 30px;}
+.grid-sizer, .grid-item{width:100%;}
+.grid-item:nth-child(3){margin-top:0;}
+.grid-item .detail{width:82.58%;}
+.grid-item:nth-child(even) .detail{float:left;width:65.16%;}
+.grid-item:nth-child(odd) .detail{float:right;}
+.grid-item:nth-child(2) .detail{width:82.58%;}
+.grid-item .detail img{width:100%;}
+
+.left-rotate {
+	position:absolute;top:-50px; left:30px;bottom:auto;
+
+    -webkit-transform-origin: 0 50%;
+       -moz-transform-origin: 0 50%;
+        -ms-transform-origin: 0 50%;
+         -o-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+    -webkit-transform: rotate(0deg) translate(0, 0);
+       -moz-transform: rotate(0deg) translate(0, 0);
+        -ms-transform: rotate(0deg) translate(0, 0);
+         -o-transform: rotate(0deg) translate(0, 0);
+            transform: rotate(0deg) translate(0, 0);
+			
+}
+.right-rotate {
+	position:absolute;top:-50px; right:37px;
+	margin:0!important;
+
+    -webkit-transform-origin: 0 0 0;
+       -moz-transform-origin:  0 0 0;
+        -ms-transform-origin:  0 0 0;
+         -o-transform-origin:  0 0 0;
+            transform-origin:  0 0 0;
+    -webkit-transform: rotate(0deg) translate(0, 0px);
+       -moz-transform: rotate(0deg) translate(0, 0px);
+        -ms-transform: rotate(0deg) translate(0, 0px);
+         -o-transform: rotate(0deg) translate(0, 0px);
+            transform: rotate(0deg) translate(0, 0px);
+}
+
+/*----------information page---*/
+.information-page{}
+.information-info{padding:0;}
+.information-page .left-rotate{left:auto; right:30px;}
+.information-page .right-rotate{right:auto; left:30px;}
+.information-page .left-rotate li,.information-page .left-rotate a,
+.information-page .right-rotate li, .information-page .right-rotate a{font-size:10px;}
+.information-page .left-rotate a.back{font-size:0;}
+.information-page .left-rotate a.back:before{content:"X";font-size:10px;}
+.information-page .information-info{/*padding-right:25%;*/max-width:230px}
+.information-info h3{font-size:7px;padding-bottom:0; margin-bottom:22px;}
+.information-info p{font-size:14px;margin-top:0; line-height:1.25;}
+.information-info .social-links a{font-size:14px;}
+.information-info .representation address.first-one{padding-right:0;margin-bottom:26px;}
+.information-page .page-wrapper{padding:60px 0;}
+.information-page .social-links li{line-height:1}
+.information-page .representation{margin-top:35px;}
+
+/*-----------post page--------*/
+.post-page .left-rotate{/*display:none;*/left:auto; right:30px;}
+.post-page .left-rotate a.back{font-size:0;}
+.post-page .left-rotate a.back:before{content:"X";font-size:10px;}
+.right-rotate.right-post-inner{position:absolute; top:-50px;left:30px; bottom:auto;margin:0!important;text-align:left;width:auto;
+-webkit-transform-origin: 0 0 0;
+       -moz-transform-origin:  0 0 0;
+        -ms-transform-origin:  0 0 0;
+         -o-transform-origin:  0 0 0;
+            transform-origin:  0 0 0;
+    -webkit-transform: rotate(0deg) translate(0, 0px);
+       -moz-transform: rotate(0deg) translate(0, 0px);
+        -ms-transform: rotate(0deg) translate(0, 0px);
+         -o-transform: rotate(0deg) translate(0, 0px);
+            transform: rotate(0deg) translate(0, 0px);
+	}
+.right-post-inner ul li:first-child{display:block;}
+.right-post-inner ul li{}
+.slide-image{display:none;}
+img.hidden{display:block;max-width:100%; height:auto;}
+/*.slider-function {
+  bottom: 30px;
+  font-size: 10px;
+  left: 50%;
+  margin-top: 0;
+  position: fixed;
+  text-align: center;
+  transform: translateX(-50%);-webkit-transform: translateX(-50%);
+  z-index: 2;
+}*/
+
+.post-page .page-content,.information-page .page-content{align-items: center;
+    display: flex;
+    justify-items: center; opacity:0;}
+
+.right-rotate.right-post-inner li:first-child{font-size:10px;}	
+.right-rotate.right-post-inner li[data-related = "info"],.right-rotate.right-post-inner li[data-related = "share"]{font-size:8px;}
+	
+#info h3{font-size:8px;margin-bottom:7px;}
+#info li{font-size:14px;}	
+}
