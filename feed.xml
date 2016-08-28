@@ -1,79 +1,30 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home Page</title>
-    <description></description>
-    <link>/bc_new/</link>
-    <atom:link href="/bc_new/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Aug 2016 16:20:31 +0530</pubDate>
-    <lastBuildDate>Sat, 27 Aug 2016 16:20:31 +0530</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
-    
+    <title>{{ site.title | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <generator>Jekyll v{{ jekyll.version }}</generator>
+    {% for post in site.posts limit:10 %}
       <item>
-        <title>Second Jekyll post!</title>
-        <description>
-</description>
-        <pubDate>Mon, 25 Jul 2016 12:15:46 +0530</pubDate>
-        <link>/bc_new/post6</link>
-        <guid isPermaLink="true">/bc_new/post6</guid>
-        
-        
+        <title>{{ post.title | xml_escape }}</title>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.tags %}
+        <category>{{ tag | xml_escape }}</category>
+        {% endfor %}
+        {% for cat in post.categories %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
       </item>
-    
-      <item>
-        <title>Second Jekyll post!</title>
-        <description>
-</description>
-        <pubDate>Mon, 25 Jul 2016 12:15:46 +0530</pubDate>
-        <link>/bc_new/post5</link>
-        <guid isPermaLink="true">/bc_new/post5</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Second Jekyll post!</title>
-        <description>
-</description>
-        <pubDate>Mon, 25 Jul 2016 12:15:46 +0530</pubDate>
-        <link>/bc_new/post4</link>
-        <guid isPermaLink="true">/bc_new/post4</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Second Jekyll post!</title>
-        <description>
-</description>
-        <pubDate>Mon, 25 Jul 2016 12:15:46 +0530</pubDate>
-        <link>/bc_new/post3</link>
-        <guid isPermaLink="true">/bc_new/post3</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Second Jekyll post!</title>
-        <description>
-</description>
-        <pubDate>Mon, 25 Jul 2016 12:15:46 +0530</pubDate>
-        <link>/bc_new/post2</link>
-        <guid isPermaLink="true">/bc_new/post2</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>INTERVIEW MAGAZINE</title>
-        <description>
-</description>
-        <pubDate>Mon, 25 Jul 2016 12:15:46 +0530</pubDate>
-        <link>/bc_new/post1</link>
-        <guid isPermaLink="true">/bc_new/post1</guid>
-        
-        
-      </item>
-    
+    {% endfor %}
   </channel>
 </rss>

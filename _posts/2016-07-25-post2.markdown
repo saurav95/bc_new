@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Second Jekyll post!"
+date:   2016-07-25 12:15:46 +0530
+featured: photo5.jpg
+styling: PHOEBE ARNOLD
+hair: ASHLEY JAVIER
+make_up: TRYON MACHHAUSEN
+models:
+ - model: CAROLINE TRENTINI
+ - model: JULIA BERGSHOEFF
+ - model: KENDALL JENNER
+ - model: IMAAN HAMMAM  
+carousel:
+ - image: /img/photo2.jpg
+ - image: /img/photo1.jpg
+---

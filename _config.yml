@@ -1,0 +1,6 @@
+
+title: Home Page
+email: your-email@domain.com
+baseurl: /bc_new
+permalink: /:slug
+exclude: [README.md]

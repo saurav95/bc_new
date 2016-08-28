@@ -24,26 +24,14 @@ var Blank ={
 				return false;
 			}
 			
-			if ( $(this).hasClass('information-page') ){
-				$('body').addClass('information-page');
-			}
-			else if( $(this).hasClass('post-link') ){
-				$('.page-wrapper').addClass('post-page');
-			}
-			else{
-				$('body').removeClass('information-page');
-				$('.page-wrapper').removeClass('post-page');
-			}
-			
 			$.ajax({
 				url: page ,
 				type: 'get',
 				beforeSend: function(){
-					$('.page-content').removeClass('loaded');		
-					$('.page-content').addClass('loading');
+				
 			   },				
-				success: function(data){
-					$('.page-wrapper').html($(data).find('.inset').html());
+				success: function(data){						
+					$('.page-container').html($(data).find('.ajx-content').html());
 						var newTitle = $(data).filter('title').text();
 						document.title = newTitle;
 				}
@@ -162,7 +150,22 @@ var Blank ={
 		Blank.slider_func();
 		Blank.slider_height();
 		Blank.share_info_clk();
+		Blank.info_page();
+	},
+	
+	info_page : function(){
+		
+	if ( $('.page-wrapper').hasClass('information') ){
+		$('body').addClass('information-page');
 	}
+	
+	else{
+		$('body').removeClass('information-page');
+	}
+		
+	}
+	
+
 	
 }
 
@@ -177,15 +180,19 @@ jQuery(window).on("load resize",function(){
 });
 
 jQuery(window).load(function(){
-Blank.loadlogo();	
+Blank.loadlogo();
 Blank.masonry_func();	
-// for mobile
-//jQuery('.post-page .page-content,.information-page .page-content').css({'opacity': 1});  
 
+});
+
+$(document).ajaxStart(function(){
+	$('body').removeClass('animation'); 
 });
 
 $( document ).ajaxComplete(function() {
   Blank.ajx_reint();
+  $('body').addClass('animation');
+ 
 });
 
 function slider_mobile(){
@@ -218,12 +225,12 @@ Blank.slider_height();
 Blank.slider_func();
 Blank.share_info_clk();
 Blank.loadpage();
+Blank.info_page();
 
-
-$(window).bind('popstate', function() {
+$(window).on('popstate', function() {
 	Blank.win_wid_hit();
 	$.ajax({url:_wl,success: function(data){
-		$('.page-wrapper').html($(data).find('.inset').html());
+		$('.page-container').html($(data).find('.ajx-content').html());
 	}});
 });
 

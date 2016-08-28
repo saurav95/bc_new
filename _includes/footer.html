@@ -1,0 +1,47 @@
+		<!--<footer id="footer">
+			{% if page.path contains '_posts' %}	
+			
+			<div class="footer post-detail">
+				<span class="title">{{page.title}}</span>
+				<span class="function">
+				<a href="javascript:void(0)">INFO</a>
+				<a href="javascript:void(0)">SHARE</a>
+				</span>
+			</div>
+			
+			{% else %}	
+				
+			<div class="footer random-space">Information</div>
+				
+			{% endif %}
+		</footer>-->
+<div class="right-rotate {% if page.path contains '_posts' %} right-post-inner {% endif %}">
+    <ul>
+	{% if page.path contains '_posts' %}
+        <li>{{page.title}}</li>
+        <li data-related="info"><span style="display:none;" class="close">CLOSE</span> INFO</li>
+        <li data-related="share"><span style="display:none;" class="close">CLOSE</span> SHARE</li>
+		{% else %}	
+		<li><a class="ajx" href="{{site.baseurl}}/information">Information</a></li>
+	{% endif %}		
+    </ul>
+</div>		
+		</div>  <!--inset-->
+		
+	</div><!--page-wrapper-->
+	
+		</div><!--ajx content -->
+	
+	</div><!--page container-->
+  
+<div id="fb-root"></div>
+<div class="loader"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=125245581248327";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>  

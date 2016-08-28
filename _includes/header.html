@@ -1,0 +1,24 @@
+	<div class="page-container">
+		<div class="ajx-content"> 
+		
+		
+		<div class="page-wrapper clearfix {% if page.path contains '_posts' %} post-page {% endif %} {% if page.url == '/information' %} information {% endif %}">
+			<div class="inset">
+				<!--<header id="header" class="left">
+					{% if page.path contains '_posts' %}
+					<div class="logo post">
+						<a href="{{site.baseurl}}/">back</a>
+					</div>
+					{% else %}	
+					<div class="logo home">Brooke Coffey</div>
+					{% endif %}
+				</header>-->
+					<div class="left-rotate">
+						<ul>
+						{% if page.path contains '_posts' or  page.url == "/information" %}
+							<li><a class="back ajx" href="{{site.baseurl}}/">back</a></li>
+						{% else %}	
+							<li>Brooke Coffey</li>
+						{% endif %}	
+						</ul>
+					</div>

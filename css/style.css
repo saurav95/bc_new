@@ -863,10 +863,11 @@ content:"\f054";
 
 /**information page**/
 
-body.information-page{
-	background:#010101;
+.information-page{
 	color: #fff;
+	background:#010101;
 }
+ 
 
 .information-info {
     padding: 0 81px;
@@ -902,7 +903,7 @@ body.information-page{
 		padding-right:93px;
 }
 
-body.information-page .left-rotate li, body.information-page .left-rotate a, body.information-page .right-rotate li, body.information-page .right-rotate a {
+.information-page .left-rotate li, .information-page .left-rotate a, .information-page .right-rotate li, .information-page .right-rotate a {
 color: #fff;
 }
 
@@ -921,16 +922,26 @@ img.hidden{display:none;}
 
 /**page content fade effect **/
 
-.page-content{
-	-webkit-transition:opacity 0.5s ease;
-	-moz-transition:opacity 0.5s ease;
-	-ms-transition: opacity 0.5s ease;
-	-o-transition: opacity 0.5s ease;
-	transition: opacity 0.5s ease;
-	opacity:1;
+
+body.animation {
+	-webkit-transition: background 0.5s ease-in;
+	-moz-transition: background 0.5s ease-in;
+	-ms-transition:  background 0.5s ease-in;
+	-o-transition: background 0.5s ease-in;
+	transition:  background 0.5s ease-in;	
+
 }
 
-.page-content.loading{
+.page-content{
 	opacity:0;
+}
+
+body.animation .page-content{
+	-webkit-transition:opacity 0.8s ease-in 0.5s ;
+	-moz-transition:opacity 0.8s ease-in 0.5s;
+	-ms-transition: opacity 0.8s ease-in 0.5s;
+	-o-transition: opacity 0.8s ease-in 0.5s;
+	transition: opacity 0.8s ease-in 0.5s;	
+	opacity:1;
 }
 
